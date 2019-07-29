@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bismillah.css">
+    <title>Learn</title>
+</head>
+
+<body>
+
+    <!-- Encabezado de la página -->
+    <nav class="navbar navbar-expand-sm navbar-light header navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home">
+                <img src="img/w.svg" width="50" height="50" alt="">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="learn" class="nav-link text-white undelined-h">Learn</a></li>
+                    <li class="nav-item"><a href="translate" class="nav-link text-white undelined-h">Translate</a>
+                    </li>
+                    <!-- <li class="nav-item"><a href="#" class="nav-link text-white undelined-h">Support</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    <div class="container p-5 main-container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-3 col-md-3 order-2 order-sm-1">
+                <nav class="nav flex-column mb-3" id="content">
+                    <a href="#tags" class="list-item" data-toggle="list" role="tab" aria-controls="tags">tags</a>
+                    <a href="#variables" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="variables">variables</a>
+                    <!-- <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="conditionals">conditionals</a>
+                    <a href="#vectors" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="vectors">vectors</a>
+                    <a href="#cuda-vectors" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="cuda-vectors">cuda
+                        vectors</a>
+                    <a href="#free" class="list-item" data-toggle="list" role="tab" aria-controls="free">free</a>
+                    <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
+                        free</a>
+                    <a href="#comments" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="comments">comments</a>
+                    <a href="#at" class="list-item" data-toggle="list" role="tab" aria-controls="at">at</a> -->
+                </nav>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 order-1 order-sm-2">
+                <!-- Para la primera muestra será todo de manera 'manual', en un futuro todos los datos serán traídos de manera dinámica con Angular -->
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- tags -->
+                    <div class="tab-pane fade show active" id="tags" role="tabpanel" aria-labelledby="tags">
+                        <h1 class="mb-5">tags</h1>
+                        <p class="mb-5">Bismillah preprocessor uses an intern language, guess what? Also called
+                            Bismillah.
+                        </p>
+                        <p class="mb-5">This tag system allows developers to write C/C++ code whenever they want.</p>
+                        <p class="mb-5">Bismillah preprocessor allows you to use as many Bismillah blocks as you
+                            want.</p>
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // cpp code here...
+
+    &lt;bismillah&gt;
+        # bismillah code here...
+    &lt;/bismillah&gt;
+
+    // cpp code here...
+}</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // cpp code here...
+
+    // a bismillah block started here...
+        // bismillah code here...
+    // a bismillah code ended here...
+
+    // cpp code here...
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- variables -->
+                    <div class="tab-pane fade show" id="variables" role="tabpanel" aria-labelledby="variables">
+                        <h1 class="mb-5">variables</h1>
+                        <p class="mb-5">
+                            Based on TypeScript, Bismillah looks so similar when variable initialization is about.
+                        </p>
+
+                        <p class="mb-5">
+                            Bismillah defines six basic data types (char, bool, int, float, number & double).
+                        </p>
+
+                        <p class="mb-5">
+                            ⚠️ If Bismillah does not know of any variable it will be translated anyways. This is because
+                            that variable could be initialized outside Bismillah.
+                        </p>
+
+                        <p class="mb-5">
+                            ⚠️ Bismillah preprocessor does not verify arrays indexes, so you will be notified that an
+                            index could be wrong.
+                        </p>
+
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    # variable initialization
+    a:int = 1234
+    b:int = 4321
+
+    # value assignation
+    a = b + a + c[i + j]
+    b = a * 2
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here..
+    // variable initialization
+    int a = 1234;
+    int b = 4321;
+
+    // value assignation
+    a = b + a + c[i+j];
+    b = a * 2;
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- conditionals
+                    <div class="tab-pane fade show" id="conditionals" role="tabpanel" aria-labelledby="conditionals">
+                        <h1 class="mb-5">conditionals</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    vectors
+                    <div class="tab-pane fade show" id="vectors" role="tabpanel" aria-labelledby="vectors">
+                        <h1 class="mb-5">vectors</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    cuda vectors
+                    <div class="tab-pane fade show" id="cuda-vectors" role="tabpanel" aria-labelledby="cuda-vectors">
+                        <h1 class="mb-5">cuda vectors</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    free
+                    <div class="tab-pane fade show" id="free" role="tabpanel" aria-labelledby="free">
+                        <h1 class="mb-5">free</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    cuda free
+                    <div class="tab-pane fade show" id="cuda-free" role="tabpanel" aria-labelledby="cuda-free">
+                        <h1 class="mb-5">cuda free</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    comments
+                    <div class="tab-pane fade show" id="comments" role="tabpanel" aria-labelledby="comments">
+                        <h1 class="mb-5">comments</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div>
+
+                    at
+                    <div class="tab-pane fade show" id="at" role="tabpanel" aria-labelledby="at">
+                        <h1 class="mb-5">at</h1>
+                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="container-fluid">
+        <footer class="row mt-5 justify-content-center align-items-center">
+            <div class="col text-center">
+                <p class="my-1">Made with ❤️.</p>
+                <p class="my-1">Licensed under MIT License.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
