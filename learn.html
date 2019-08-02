@@ -16,7 +16,7 @@
     <!-- Encabezado de la página -->
     <nav class="navbar navbar-expand-sm navbar-light header navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="https://memburg.github.io/bismillah/">
+            <a class="navbar-brand" href="home">
                 <img src="img/w.svg" width="50" height="50" alt="">
             </a>
 
@@ -44,9 +44,9 @@
                     <a href="#tags" class="list-item" data-toggle="list" role="tab" aria-controls="tags">tags</a>
                     <a href="#variables" class="list-item" data-toggle="list" role="tab"
                         aria-controls="variables">variables</a>
-                    <!-- <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
+                    <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
                         aria-controls="conditionals">conditionals</a>
-                    <a href="#vectors" class="list-item" data-toggle="list" role="tab"
+                    <!-- <a href="#vectors" class="list-item" data-toggle="list" role="tab"
                         aria-controls="vectors">vectors</a>
                     <a href="#cuda-vectors" class="list-item" data-toggle="list" role="tab"
                         aria-controls="cuda-vectors">cuda
@@ -156,13 +156,31 @@ int main() {
                         </div>
                     </div>
 
-                    <!-- conditionals
+                    <!-- conditionals -->
                     <div class="tab-pane fade show" id="conditionals" role="tabpanel" aria-labelledby="conditionals">
                         <h1 class="mb-5">conditionals</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">Bismillah tries to give the developer a Python-like experience.</p>
+
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    a:int = 42
+    b:int = a and a or not a
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here..
+    int a = 42;
+    int b = a && a || ! a;
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
                     </div>
 
-                    vectors
+                    <!-- vectors
                     <div class="tab-pane fade show" id="vectors" role="tabpanel" aria-labelledby="vectors">
                         <h1 class="mb-5">vectors</h1>
                         <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
