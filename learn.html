@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light header navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index">
+            <a class="navbar-brand" href="https://memburg.github.io/bismillah">
                 <img src="img/w.svg" width="50" height="50" alt="">
             </a>
 
@@ -43,14 +43,15 @@
                         aria-controls="variables">variables</a>
                     <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
                         aria-controls="conditionals">conditionals</a>
-                    <a href="#vectors" class="list-item" data-toggle="list" role="tab"
-                        aria-controls="vectors">vectors <span class="badge badge-primary">new</span></a>
+                    <a href="#vectors" class="list-item" data-toggle="list" role="tab" aria-controls="vectors">vectors
+                        <span class="badge badge-primary">new</span></a>
                     <a href="#cuda-vectors" class="list-item" data-toggle="list" role="tab"
                         aria-controls="cuda-vectors">cuda vectors <span class="badge badge-primary">new</span></a>
-                    <!-- <a href="#free" class="list-item" data-toggle="list" role="tab" aria-controls="free">free</a> -->
-                    <!-- <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
-                        free</a>
-                    <a href="#comments" class="list-item" data-toggle="list" role="tab"
+                    <a href="#free" class="list-item" data-toggle="list" role="tab" aria-controls="free">free <span
+                            class="badge badge-primary">new</span></a>
+                    <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
+                        free <span class="badge badge-primary">new</span></a>
+                    <!-- <a href="#comments" class="list-item" data-toggle="list" role="tab"
                         aria-controls="comments">comments</a>
                     <a href="#at" class="list-item" data-toggle="list" role="tab" aria-controls="at">at</a> -->
                 </nav>
@@ -189,10 +190,10 @@ int main() {
                                 <pre class="card-text"><code>&lt;bismillah&gt;
     length:int = 5000
 
-    # heap memory
+    # stack memory
     heap_vector:number[length]
 
-    # stack memory
+    # heap memory
     stack_vector:number = [length]
 &lt;/bismillah&gt;</code></pre>
                             </div>
@@ -201,10 +202,10 @@ int main() {
                                 <pre class="card-text"><code>// a bismillah block started here...
     int length = 5000;
 
-    // heap memory
+    // stack memory
     float heap_vector[length];
 
-    // stack memory
+    // heap memory
     float *stack_vector = (float *) malloc(length * sizeof(float));
 // a bismillah block ended here...
 </code></pre>
@@ -215,13 +216,14 @@ int main() {
                     <!-- cuda vectors -->
                     <div class="tab-pane fade show" id="cuda-vectors" role="tabpanel" aria-labelledby="cuda-vectors">
                         <h1 class="mb-5">cuda vectors</h1>
-                        <p class="mb-5">You are getting into dark places, CUDA vectors seem to be quite difficult, but that's why Bismillah exists... to make your life a little bit easier.</p>
+                        <p class="mb-5">You are getting into dark places, CUDA vectors seem to be quite difficult, but
+                            that's why Bismillah exists... to make your life a little bit easier.</p>
                         <p class="mb-5">Forget about pointers 😏.</p>
 
                         <div class="card mb-5">
-                                <div class="card-header">Example</div>
-                                <div class="card-body">
-                                    <pre class="card-text"><code>&lt;bismillah&gt;
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
     length:int = 314159
 
     # reserved on device
@@ -231,30 +233,109 @@ int main() {
                             <div class="card-header card-footer">Translation</div>
                             <div class="card-body">
                                 <pre class="card-text"><code>// a bismillah block started here...
-    int length = 314159
+    int length = 314159;
 
     // reserved on device
     float *dev_a;
     cudaMalloc((void **)&dev_a, length * sizeof(float));
 // a bismillah block ended here...
 </code></pre>
-                                </div>
                             </div>
+                        </div>
                     </div>
 
-                    <!-- free
+                    <!-- free -->
                     <div class="tab-pane fade show" id="free" role="tabpanel" aria-labelledby="free">
                         <h1 class="mb-5">free</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">If you reserve memory, you have to free it after using it. But don't worry, you
+                            don't have to do it in the C++ way (freeing vectors one by one) cause doing it that way is
+                            such an old fashioned thing, just like love 💔.</p>
+                        <p class="mb-5">🔴 Bismillah must know vectors, so if you wanna use the
+                            <code>free_all</code> function then you should create your vectors inside a Bismillah block.
+                        </p>
+
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    length:int = 5000
+
+    # heap memory
+    a:number = [length]
+    b:number = [length]
+    c:number = [length]
+
+    # freeing everything <3
+    free_all()
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here...
+    int length = 5000;
+
+    // heap memory
+    float *a = (float *) malloc(length * sizeof(float));
+    float *b = (float *) malloc(length * sizeof(float));
+    float *c = (float *) malloc(length * sizeof(float));
+
+    // freeing everything <3
+    free(a);
+    free(b);
+    free(c);
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
                     </div>
 
-                    cuda free
+                    <!-- cuda free -->
                     <div class="tab-pane fade show" id="cuda-free" role="tabpanel" aria-labelledby="cuda-free">
                         <h1 class="mb-5">cuda free</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">If you reserve memory on GPU, you must free it.</p>
+                        <p class="mb-5">🔴 Just like the <code>free_all</code> function, if you wanna use the
+                            <code>cuda_free_all</code> function you need to create your CUDA vectors inside a Bismillah
+                            block.</p>
+
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    length:int = 5000
+
+    # heap memory
+    cuda a:number = [length]
+    cuda b:number = [length]
+    cuda c:number = [length]
+
+    # freeing everything <3
+    free_all()
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here...
+    int length = 5000;
+
+    // heap memory
+    float *dev_a;
+    cudaMalloc((void **)&dev_a, length * sizeof(float));
+    float *dev_b;
+    cudaMalloc((void **)&dev_b, length * sizeof(float));
+    float *dev_c;
+    cudaMalloc((void **)&dev_c, length * sizeof(float));
+
+    // freeing everything <3
+    cudaFree(dev_a);
+    cudaFree(dev_b);
+    cudaFree(dev_c);
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
                     </div>
 
-                    comments
+                    <!-- comments
                     <div class="tab-pane fade show" id="comments" role="tabpanel" aria-labelledby="comments">
                         <h1 class="mb-5">comments</h1>
                         <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
