@@ -12,11 +12,9 @@
 </head>
 
 <body>
-
-    <!-- Encabezado de la página -->
     <nav class="navbar navbar-expand-sm navbar-light header navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="home">
+            <a class="navbar-brand" href="index">
                 <img src="img/w.svg" width="50" height="50" alt="">
             </a>
 
@@ -36,8 +34,7 @@
         </div>
     </nav>
 
-    <!-- Contenido principal de la página -->
-    <div class="container p-5 main-container">
+    <div class="container p-5 main-container animated fadeIn">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-3 col-md-3 order-2 order-sm-1">
                 <nav class="nav flex-column mb-3" id="content">
@@ -46,13 +43,12 @@
                         aria-controls="variables">variables</a>
                     <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
                         aria-controls="conditionals">conditionals</a>
-                    <!-- <a href="#vectors" class="list-item" data-toggle="list" role="tab"
-                        aria-controls="vectors">vectors</a>
+                    <a href="#vectors" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="vectors">vectors <span class="badge badge-primary">new</span></a>
                     <a href="#cuda-vectors" class="list-item" data-toggle="list" role="tab"
-                        aria-controls="cuda-vectors">cuda
-                        vectors</a>
-                    <a href="#free" class="list-item" data-toggle="list" role="tab" aria-controls="free">free</a>
-                    <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
+                        aria-controls="cuda-vectors">cuda vectors <span class="badge badge-primary">new</span></a>
+                    <!-- <a href="#free" class="list-item" data-toggle="list" role="tab" aria-controls="free">free</a> -->
+                    <!-- <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
                         free</a>
                     <a href="#comments" class="list-item" data-toggle="list" role="tab"
                         aria-controls="comments">comments</a>
@@ -61,7 +57,6 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-6 order-1 order-sm-2">
-                <!-- Para la primera muestra será todo de manera 'manual', en un futuro todos los datos serán traídos de manera dinámica con Angular -->
                 <div class="tab-content" id="nav-tabContent">
                     <!-- tags -->
                     <div class="tab-pane fade show active" id="tags" role="tabpanel" aria-labelledby="tags">
@@ -142,7 +137,7 @@ int main() {
                             </div>
                             <div class="card-header card-footer">Translation</div>
                             <div class="card-body">
-                                <pre class="card-text"><code>// a bismillah block started here..
+                                <pre class="card-text"><code>// a bismillah block started here...
     // variable initialization
     int a = 1234;
     int b = 4321;
@@ -171,7 +166,7 @@ int main() {
                             </div>
                             <div class="card-header card-footer">Translation</div>
                             <div class="card-body">
-                                <pre class="card-text"><code>// a bismillah block started here..
+                                <pre class="card-text"><code>// a bismillah block started here...
     int a = 42;
     int b = a && a || ! a;
 // a bismillah block ended here...
@@ -180,19 +175,74 @@ int main() {
                         </div>
                     </div>
 
-                    <!-- vectors
+                    <!-- vectors -->
                     <div class="tab-pane fade show" id="vectors" role="tabpanel" aria-labelledby="vectors">
                         <h1 class="mb-5">vectors</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">As you may know, C++ uses heap and stack memory, Bismillah simplifies this by
+                            using a TypeScript syntax based.</p>
+                        <p class="mb-5">The difference between Bismillah vectors is minimum so you don't have to
+                            memorize a complex/weird syntax.</p>
+
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    length:int = 5000
+
+    # heap memory
+    heap_vector:number[length]
+
+    # stack memory
+    stack_vector:number = [length]
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here...
+    int length = 5000;
+
+    // heap memory
+    float heap_vector[length];
+
+    // stack memory
+    float *stack_vector = (float *) malloc(length * sizeof(float));
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
                     </div>
 
-                    cuda vectors
+                    <!-- cuda vectors -->
                     <div class="tab-pane fade show" id="cuda-vectors" role="tabpanel" aria-labelledby="cuda-vectors">
                         <h1 class="mb-5">cuda vectors</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">You are getting into dark places, CUDA vectors seem to be quite difficult, but that's why Bismillah exists... to make your life a little bit easier.</p>
+                        <p class="mb-5">Forget about pointers 😏.</p>
+
+                        <div class="card mb-5">
+                                <div class="card-header">Example</div>
+                                <div class="card-body">
+                                    <pre class="card-text"><code>&lt;bismillah&gt;
+    length:int = 314159
+
+    # reserved on device
+    cuda dev_a:number = [length]
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here...
+    int length = 314159
+
+    // reserved on device
+    float *dev_a;
+    cudaMalloc((void **)&dev_a, length * sizeof(float));
+// a bismillah block ended here...
+</code></pre>
+                                </div>
+                            </div>
                     </div>
 
-                    free
+                    <!-- free
                     <div class="tab-pane fade show" id="free" role="tabpanel" aria-labelledby="free">
                         <h1 class="mb-5">free</h1>
                         <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
@@ -220,7 +270,6 @@ int main() {
         </div>
     </div>
 
-    <!-- Pie de página -->
     <div class="container-fluid">
         <footer class="row mt-5 justify-content-center align-items-center">
             <div class="col text-center">
