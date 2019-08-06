@@ -41,8 +41,8 @@
                     <a href="#tags" class="list-item" data-toggle="list" role="tab" aria-controls="tags">tags</a>
                     <a href="#variables" class="list-item" data-toggle="list" role="tab"
                         aria-controls="variables">variables</a>
-                    <a href="#conditionals" class="list-item" data-toggle="list" role="tab"
-                        aria-controls="conditionals">conditionals</a>
+                    <a href="#logical" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="logical">logical</a>
                     <a href="#vectors" class="list-item" data-toggle="list" role="tab" aria-controls="vectors">vectors
                         <span class="badge badge-primary">new</span></a>
                     <a href="#cuda-vectors" class="list-item" data-toggle="list" role="tab"
@@ -51,9 +51,9 @@
                             class="badge badge-primary">new</span></a>
                     <a href="#cuda-free" class="list-item" data-toggle="list" role="tab" aria-controls="cuda-free">cuda
                         free <span class="badge badge-primary">new</span></a>
-                    <!-- <a href="#comments" class="list-item" data-toggle="list" role="tab"
-                        aria-controls="comments">comments</a>
-                    <a href="#at" class="list-item" data-toggle="list" role="tab" aria-controls="at">at</a> -->
+                    <a href="#comments" class="list-item" data-toggle="list" role="tab"
+                        aria-controls="comments">comments <span class="badge badge-primary">new</span></a>
+                    <!-- <a href="#at" class="list-item" data-toggle="list" role="tab" aria-controls="at">at</a> -->
                 </nav>
             </div>
 
@@ -152,9 +152,9 @@ int main() {
                         </div>
                     </div>
 
-                    <!-- conditionals -->
-                    <div class="tab-pane fade show" id="conditionals" role="tabpanel" aria-labelledby="conditionals">
-                        <h1 class="mb-5">conditionals</h1>
+                    <!-- logical -->
+                    <div class="tab-pane fade show" id="logical" role="tabpanel" aria-labelledby="logical">
+                        <h1 class="mb-5">logical</h1>
                         <p class="mb-5">Bismillah tries to give the developer a Python-like experience.</p>
 
                         <div class="card mb-5">
@@ -250,7 +250,7 @@ int main() {
                         <p class="mb-5">If you reserve memory, you have to free it after using it. But don't worry, you
                             don't have to do it in the C++ way (freeing vectors one by one) cause doing it that way is
                             such an old fashioned thing, just like love 💔.</p>
-                        <p class="mb-5">🔴 Bismillah must know vectors, so if you wanna use the
+                        <p class="mb-5">🛑 Bismillah must know vectors, so if you wanna use the
                             <code>free_all</code> function then you should create your vectors inside a Bismillah block.
                         </p>
 
@@ -293,7 +293,7 @@ int main() {
                     <div class="tab-pane fade show" id="cuda-free" role="tabpanel" aria-labelledby="cuda-free">
                         <h1 class="mb-5">cuda free</h1>
                         <p class="mb-5">If you reserve memory on GPU, you must free it.</p>
-                        <p class="mb-5">🔴 Just like the <code>free_all</code> function, if you wanna use the
+                        <p class="mb-5">🛑 Just like the <code>free_all</code> function, if you wanna use the
                             <code>cuda_free_all</code> function you need to create your CUDA vectors inside a Bismillah
                             block.</p>
 
@@ -304,12 +304,12 @@ int main() {
     length:int = 5000
 
     # heap memory
-    cuda a:number = [length]
-    cuda b:number = [length]
-    cuda c:number = [length]
+    cuda dev_a:number = [length]
+    cuda dev_b:number = [length]
+    cuda dev_c:number = [length]
 
     # freeing everything <3
-    free_all()
+    cuda_free_all()
 &lt;/bismillah&gt;</code></pre>
                             </div>
                             <div class="card-header card-footer">Translation</div>
@@ -335,13 +335,31 @@ int main() {
                         </div>
                     </div>
 
-                    <!-- comments
+                    <!-- comments -->
                     <div class="tab-pane fade show" id="comments" role="tabpanel" aria-labelledby="comments">
                         <h1 class="mb-5">comments</h1>
-                        <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
+                        <p class="mb-5">Probably you have noticed how Bismillah comments are written. You will find a
+                            Python like syntax.</p>
+                        <div class="card mb-5">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>&lt;bismillah&gt;
+    # This is a comment
+    ## This is also valid
+&lt;/bismillah&gt;</code></pre>
+                            </div>
+                            <div class="card-header card-footer">Translation</div>
+                            <div class="card-body">
+                                <pre class="card-text"><code>// a bismillah block started here...
+    // This is a comment
+    // This is also valid
+// a bismillah block ended here...
+</code></pre>
+                            </div>
+                        </div>
                     </div>
 
-                    at
+                    <!-- at
                     <div class="tab-pane fade show" id="at" role="tabpanel" aria-labelledby="at">
                         <h1 class="mb-5">at</h1>
                         <p class="mb-5">Bismillah uses a Python based syntax for this issue.</p>
